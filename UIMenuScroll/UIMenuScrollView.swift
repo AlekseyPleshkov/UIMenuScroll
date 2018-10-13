@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class UIMenuScrollView: UIView {
+public class UIMenuScrollView: UIView, UIScrollViewDelegate {
     
     /// Attach events
     public var delegate: UIMenuScrollViewDelegate?
@@ -214,11 +214,9 @@ public class UIMenuScrollView: UIView {
         }
         self.isScrollingTo = true
     }
-}
-
-/// MARK: Extension UIScrollViewDelegate
-extension UIMenuScrollView: UIScrollViewDelegate {
-
+    
+    /// MARK: Extension UIScrollViewDelegate
+    
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if let near = self.nearButton(scrollView: scrollView) {
             self.scrollTo(button: near)

@@ -2,7 +2,7 @@
 
 `UIMenuScroll` creating menu how on Facebook Messenger on take photo
 
-![Screenshot](Screenshot.jpg)
+![Screenshot](https://github.com/AlekseyPleshkov/UIMenuScroll/blob/master/Screenshot.jpg?raw=true)
 
 ## Installation
 
@@ -20,7 +20,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-pod 'UIMenuScroll', '~> 0.0.4'
+pod 'UIMenuScroll', '~> 0.0.5'
 end
 ```
 
