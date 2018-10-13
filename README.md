@@ -1,6 +1,6 @@
 # UIMenuScroll
 
-`MenuItemKit` creating menu how on Facebook Messenger on take photo
+`UIMenuScroll` creating menu how on Facebook Messenger on take photo
 
 ![Screenshot](Screenshot.jpg)
 
@@ -84,4 +84,4 @@ extension ViewController: UIMenuScrollViewDelegate {
 
 ## License
 
-`MenuItemKit` is released under the MIT license. In short, it's royalty-free but you must keep the copyright notice in your code or software distribution.
+`UIMenuScroll` is released under the MIT license. In short, it's royalty-free but you must keep the copyright notice in your code or software distribution.
