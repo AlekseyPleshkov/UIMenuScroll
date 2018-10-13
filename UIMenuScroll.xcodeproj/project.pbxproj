@@ -9,7 +9,15 @@
 /* Begin PBXBuildFile section */
 		9ABEE3282171DAF4003B9E34 /* UIMenuScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABEE31E2171DAF4003B9E34 /* UIMenuScroll.framework */; };
 		9ABEE32D2171DAF4003B9E34 /* UIMenuScrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEE32C2171DAF4003B9E34 /* UIMenuScrollTests.swift */; };
-		9ABEE32F2171DAF4003B9E34 /* UIMenuScroll.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABEE3212171DAF4003B9E34 /* UIMenuScroll.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9ABEE33A2171DB10003B9E34 /* UIMenuScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEE3382171DB10003B9E34 /* UIMenuScrollViewDelegate.swift */; };
+		9ABEE33B2171DB10003B9E34 /* UIMenuScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEE3382171DB10003B9E34 /* UIMenuScrollViewDelegate.swift */; };
+		9ABEE33C2171DB10003B9E34 /* UIMenuScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEE3392171DB10003B9E34 /* UIMenuScrollView.swift */; };
+		9ABEE33D2171DB10003B9E34 /* UIMenuScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEE3392171DB10003B9E34 /* UIMenuScrollView.swift */; };
+		9ABEE33F2171DBAC003B9E34 /* UIMenuScroll.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9ABEE33E2171DBAC003B9E34 /* UIMenuScroll.podspec */; };
+		9ABEE3412171DD02003B9E34 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9ABEE3402171DD02003B9E34 /* LICENSE */; };
+		9ABEE3432171DD42003B9E34 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9ABEE3422171DD42003B9E34 /* README.md */; };
+		9ABEE3452171DDDD003B9E34 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9ABEE3442171DDDD003B9E34 /* .gitignore */; };
+		9ABEE3472171E34C003B9E34 /* Screenshot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9ABEE3462171E34C003B9E34 /* Screenshot.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +32,17 @@
 
 /* Begin PBXFileReference section */
 		9ABEE31E2171DAF4003B9E34 /* UIMenuScroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIMenuScroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9ABEE3212171DAF4003B9E34 /* UIMenuScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIMenuScroll.h; sourceTree = "<group>"; };
 		9ABEE3222171DAF4003B9E34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ABEE3272171DAF4003B9E34 /* UIMenuScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIMenuScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABEE32C2171DAF4003B9E34 /* UIMenuScrollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMenuScrollTests.swift; sourceTree = "<group>"; };
 		9ABEE32E2171DAF4003B9E34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9ABEE3382171DB10003B9E34 /* UIMenuScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIMenuScrollViewDelegate.swift; sourceTree = "<group>"; };
+		9ABEE3392171DB10003B9E34 /* UIMenuScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIMenuScrollView.swift; sourceTree = "<group>"; };
+		9ABEE33E2171DBAC003B9E34 /* UIMenuScroll.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UIMenuScroll.podspec; sourceTree = "<group>"; };
+		9ABEE3402171DD02003B9E34 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9ABEE3422171DD42003B9E34 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9ABEE3442171DDDD003B9E34 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		9ABEE3462171E34C003B9E34 /* Screenshot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Screenshot.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +68,12 @@
 			isa = PBXGroup;
 			children = (
 				9ABEE3202171DAF4003B9E34 /* UIMenuScroll */,
-				9ABEE32B2171DAF4003B9E34 /* UIMenuScrollTests */,
+				9ABEE32B2171DAF4003B9E34 /* Tests */,
+				9ABEE3442171DDDD003B9E34 /* .gitignore */,
+				9ABEE3422171DD42003B9E34 /* README.md */,
+				9ABEE3402171DD02003B9E34 /* LICENSE */,
+				9ABEE33E2171DBAC003B9E34 /* UIMenuScroll.podspec */,
+				9ABEE3462171E34C003B9E34 /* Screenshot.jpg */,
 				9ABEE31F2171DAF4003B9E34 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,19 +90,20 @@
 		9ABEE3202171DAF4003B9E34 /* UIMenuScroll */ = {
 			isa = PBXGroup;
 			children = (
-				9ABEE3212171DAF4003B9E34 /* UIMenuScroll.h */,
+				9ABEE3392171DB10003B9E34 /* UIMenuScrollView.swift */,
+				9ABEE3382171DB10003B9E34 /* UIMenuScrollViewDelegate.swift */,
 				9ABEE3222171DAF4003B9E34 /* Info.plist */,
 			);
 			path = UIMenuScroll;
 			sourceTree = "<group>";
 		};
-		9ABEE32B2171DAF4003B9E34 /* UIMenuScrollTests */ = {
+		9ABEE32B2171DAF4003B9E34 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				9ABEE32C2171DAF4003B9E34 /* UIMenuScrollTests.swift */,
 				9ABEE32E2171DAF4003B9E34 /* Info.plist */,
 			);
-			path = UIMenuScrollTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,7 +113,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ABEE32F2171DAF4003B9E34 /* UIMenuScroll.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +167,7 @@
 				TargetAttributes = {
 					9ABEE31D2171DAF4003B9E34 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					9ABEE3262171DAF4003B9E34 = {
 						CreatedOnToolsVersion = 10.0;
@@ -177,6 +197,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ABEE3452171DDDD003B9E34 /* .gitignore in Resources */,
+				9ABEE3432171DD42003B9E34 /* README.md in Resources */,
+				9ABEE3412171DD02003B9E34 /* LICENSE in Resources */,
+				9ABEE33F2171DBAC003B9E34 /* UIMenuScroll.podspec in Resources */,
+				9ABEE3472171E34C003B9E34 /* Screenshot.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ABEE33C2171DB10003B9E34 /* UIMenuScrollView.swift in Sources */,
+				9ABEE33A2171DB10003B9E34 /* UIMenuScrollViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +229,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ABEE32D2171DAF4003B9E34 /* UIMenuScrollTests.swift in Sources */,
+				9ABEE33B2171DB10003B9E34 /* UIMenuScrollViewDelegate.swift in Sources */,
+				9ABEE33D2171DB10003B9E34 /* UIMenuScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +370,7 @@
 		9ABEE3332171DAF4003B9E34 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -358,6 +388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = aleksey.store.UIMenuScroll;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +397,7 @@
 		9ABEE3342171DAF4003B9E34 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -391,6 +423,7 @@
 		9ABEE3362171DAF4003B9E34 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3T83JM3UW;
 				INFOPLIST_FILE = UIMenuScrollTests/Info.plist;
@@ -409,6 +442,7 @@
 		9ABEE3372171DAF4003B9E34 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3T83JM3UW;
 				INFOPLIST_FILE = UIMenuScrollTests/Info.plist;
