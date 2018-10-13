@@ -1,6 +1,6 @@
 # UIMenuScroll
 
-`MenuItemKit`
+`MenuItemKit` creating menu how on Facebook Messenger on take photo
 
 ![Screenshot](Screenshot.jpg)
 
@@ -12,7 +12,7 @@
 $ gem install cocoapods
 ```
 
-To integrate UIMenuScroll into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate `UIMenuScroll` into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
@@ -75,8 +75,6 @@ extension ViewController: UIMenuScrollViewDelegate {
 
 }
 ```
-
-Profit!
 
 ## About Me
 
