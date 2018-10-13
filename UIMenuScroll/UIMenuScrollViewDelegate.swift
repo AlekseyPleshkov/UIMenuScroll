@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol UIMenuScrollViewDelegate {
+public protocol UIMenuScrollViewDelegate {
     
     /// Set count a elements in menu scroll
     func menuScroll(menuScroll: UIMenuScrollView) -> Int

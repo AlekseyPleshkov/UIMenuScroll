@@ -13,11 +13,8 @@
 		9ABEE33B2171DB10003B9E34 /* UIMenuScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEE3382171DB10003B9E34 /* UIMenuScrollViewDelegate.swift */; };
 		9ABEE33C2171DB10003B9E34 /* UIMenuScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEE3392171DB10003B9E34 /* UIMenuScrollView.swift */; };
 		9ABEE33D2171DB10003B9E34 /* UIMenuScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEE3392171DB10003B9E34 /* UIMenuScrollView.swift */; };
-		9ABEE33F2171DBAC003B9E34 /* UIMenuScroll.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9ABEE33E2171DBAC003B9E34 /* UIMenuScroll.podspec */; };
-		9ABEE3412171DD02003B9E34 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9ABEE3402171DD02003B9E34 /* LICENSE */; };
-		9ABEE3432171DD42003B9E34 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9ABEE3422171DD42003B9E34 /* README.md */; };
-		9ABEE3452171DDDD003B9E34 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9ABEE3442171DDDD003B9E34 /* .gitignore */; };
-		9ABEE3472171E34C003B9E34 /* Screenshot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9ABEE3462171E34C003B9E34 /* Screenshot.jpg */; };
+		9ABEE36D2171F341003B9E34 /* UIMenuScroll.h in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEE3632171EC75003B9E34 /* UIMenuScroll.h */; };
+		9ABEE36E2171F34D003B9E34 /* UIMenuScroll.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABEE3632171EC75003B9E34 /* UIMenuScroll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +40,7 @@
 		9ABEE3422171DD42003B9E34 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9ABEE3442171DDDD003B9E34 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		9ABEE3462171E34C003B9E34 /* Screenshot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Screenshot.jpg; sourceTree = "<group>"; };
+		9ABEE3632171EC75003B9E34 /* UIMenuScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIMenuScroll.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				9ABEE3202171DAF4003B9E34 /* UIMenuScroll */,
-				9ABEE32B2171DAF4003B9E34 /* Tests */,
+				9ABEE32B2171DAF4003B9E34 /* UIMenuScrollTests */,
 				9ABEE3442171DDDD003B9E34 /* .gitignore */,
 				9ABEE3422171DD42003B9E34 /* README.md */,
 				9ABEE3402171DD02003B9E34 /* LICENSE */,
@@ -93,17 +91,18 @@
 				9ABEE3392171DB10003B9E34 /* UIMenuScrollView.swift */,
 				9ABEE3382171DB10003B9E34 /* UIMenuScrollViewDelegate.swift */,
 				9ABEE3222171DAF4003B9E34 /* Info.plist */,
+				9ABEE3632171EC75003B9E34 /* UIMenuScroll.h */,
 			);
 			path = UIMenuScroll;
 			sourceTree = "<group>";
 		};
-		9ABEE32B2171DAF4003B9E34 /* Tests */ = {
+		9ABEE32B2171DAF4003B9E34 /* UIMenuScrollTests */ = {
 			isa = PBXGroup;
 			children = (
 				9ABEE32C2171DAF4003B9E34 /* UIMenuScrollTests.swift */,
 				9ABEE32E2171DAF4003B9E34 /* Info.plist */,
 			);
-			path = Tests;
+			path = UIMenuScrollTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,6 +112,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ABEE36E2171F34D003B9E34 /* UIMenuScroll.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +180,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 9ABEE3142171DAF4003B9E34;
 			productRefGroup = 9ABEE31F2171DAF4003B9E34 /* Products */;
@@ -197,11 +198,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ABEE3452171DDDD003B9E34 /* .gitignore in Resources */,
-				9ABEE3432171DD42003B9E34 /* README.md in Resources */,
-				9ABEE3412171DD02003B9E34 /* LICENSE in Resources */,
-				9ABEE33F2171DBAC003B9E34 /* UIMenuScroll.podspec in Resources */,
-				9ABEE3472171E34C003B9E34 /* Screenshot.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +217,7 @@
 			files = (
 				9ABEE33C2171DB10003B9E34 /* UIMenuScrollView.swift in Sources */,
 				9ABEE33A2171DB10003B9E34 /* UIMenuScrollViewDelegate.swift in Sources */,
+				9ABEE36D2171F341003B9E34 /* UIMenuScroll.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +384,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = aleksey.store.UIMenuScroll;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -414,7 +411,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = aleksey.store.UIMenuScroll;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -1,7 +1,7 @@
 # coding: utf-8
 Pod::Spec.new do |s|
     s.name         = "UIMenuScroll"
-    s.version      = "0.0.1"
+    s.version      = "0.0.2"
     s.summary      = "UIMenuScroll creating menu how on Facebook Messenger on take photo"
     s.author       = "AlekseyPleshkov <im@alekseypleshkov.ru>"
     s.homepage     = "https://github.com/AlekseyPleshkov/UIMenuScroll"

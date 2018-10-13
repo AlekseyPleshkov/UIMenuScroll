@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIMenuScrollView: UIView {
+public class UIMenuScrollView: UIView {
     
     /// Attach events
     public var delegate: UIMenuScrollViewDelegate?
@@ -72,7 +72,15 @@ class UIMenuScrollView: UIView {
         return view
     }
     
-    override func layoutSubviews() {
+    public init() {
+        super.init(frame: CGRect.zero)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override public func layoutSubviews() {
         self.initViews()
         self.setupConstraints()
         self.addButtonsToStackView()
@@ -211,13 +219,13 @@ class UIMenuScrollView: UIView {
 /// MARK: Extension UIScrollViewDelegate
 extension UIMenuScrollView: UIScrollViewDelegate {
 
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    private func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if let near = self.nearButton(scrollView: scrollView) {
             self.scrollTo(button: near)
         }
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    private func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if let near = self.nearButton(scrollView: scrollView) {
             self.scrollTo(button: near)
         }
