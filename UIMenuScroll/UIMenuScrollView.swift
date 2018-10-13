@@ -219,13 +219,13 @@ public class UIMenuScrollView: UIView {
 /// MARK: Extension UIScrollViewDelegate
 extension UIMenuScrollView: UIScrollViewDelegate {
 
-    private func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if let near = self.nearButton(scrollView: scrollView) {
             self.scrollTo(button: near)
         }
     }
     
-    private func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if let near = self.nearButton(scrollView: scrollView) {
             self.scrollTo(button: near)
         }
