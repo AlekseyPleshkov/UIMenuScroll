@@ -10,25 +10,32 @@ import XCTest
 @testable import UIMenuScroll
 
 class UIMenuScrollTests: XCTestCase {
+    
+    var menuScroll: UIMenuScrollView?
+    var viewController: ViewController?
 
     override func setUp() {
-        // UIMenuScrollView()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.viewController = ViewController()
+        self.menuScroll = UIMenuScrollView()
+        
+        if let menuScroll = self.menuScroll, let viewController = self.viewController {
+            menuScroll.delegate = viewController
+            menuScroll.startInit()
+        }
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testNil() {
+        XCTAssertNotNil(self.viewController, "ViewController is nil")
+        XCTAssertNotNil(self.menuScroll, "MenuScroll is nil")
+        XCTAssertNotNil(self.menuScroll?.delegate, "MenuScroll delegate is nil")
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testMenuScroll() {
+        if let menuScroll = self.menuScroll {
+            XCTAssertTrue(menuScroll.buttonsCount == 10, "Buttons is not created")
+            XCTAssertTrue(menuScroll.buttonsList.count == 10, "Buttons is not created in UI")
+            XCTAssertNotNil(menuScroll.focusButton, "Not is set first button to focus")
+            XCTAssertNotNil(menuScroll.nearButton(scrollView: menuScroll.scrollView), "The button closest to the center was not found.")
         }
     }
 

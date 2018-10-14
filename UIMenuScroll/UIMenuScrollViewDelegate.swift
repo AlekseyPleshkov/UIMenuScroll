@@ -20,6 +20,6 @@ public protocol UIMenuScrollViewDelegate {
     func menuScroll(menuScroll: UIMenuScrollView, touchSender: UIButton, index: Int)
     
     /// Set options to center indicator image
-    func menuScroll(menuScroll: UIMenuScrollView) -> UIImage
+    func menuScroll(menuScroll: UIMenuScrollView) -> UIImage?
     
 }

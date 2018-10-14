@@ -16,24 +16,29 @@ public class UIMenuScrollView: UIView, UIScrollViewDelegate {
     /// Button spacing
     public var spacing: CGFloat = 10.0
     
+    /// How many buttons to create
+    private (set) var buttonsCount: Int = 0
+    
     /// Button list on stackView
-    private var buttonList: [UIButton] = []
+    private (set) var buttonsList: [UIButton] = []
     
     /// If active scrolling scoll view to button
     private var isScrollingTo: Bool = false
     
     /// Button in center indicator view
-    private var focusButton: UIButton?
+    private (set) var focusButton: UIButton?
     
     /// Create scrollView
     private var _scrollView: UIScrollView?
-    private var scrollView: UIScrollView {
+    public var scrollView: UIScrollView {
         guard let view = self._scrollView else {
             let newElement = UIScrollView()
-            newElement.backgroundColor = UIColor.clear
-            newElement.translatesAutoresizingMaskIntoConstraints = false
             newElement.delegate = self
+            newElement.backgroundColor = UIColor.clear
             newElement.decelerationRate = .fast
+            newElement.showsVerticalScrollIndicator = false
+            newElement.showsHorizontalScrollIndicator = false
+            newElement.translatesAutoresizingMaskIntoConstraints = false
             self._scrollView = newElement
             return newElement
         }
@@ -43,7 +48,7 @@ public class UIMenuScrollView: UIView, UIScrollViewDelegate {
     
     /// Create stackView in scrollView
     private var _stackView: UIStackView?
-    private var stackView: UIStackView {
+    public var stackView: UIStackView {
         guard let view = self._stackView else {
             let newElement = UIStackView()
             newElement.spacing = self.spacing
@@ -60,7 +65,7 @@ public class UIMenuScrollView: UIView, UIScrollViewDelegate {
     
     /// Create center view indicator
     private var _indicatorView: UIImageView?
-    private var indicatorView: UIImageView {
+    public var indicatorView: UIImageView {
         guard let view = self._indicatorView else {
             let newElement = UIImageView()
             newElement.translatesAutoresizingMaskIntoConstraints = false
@@ -81,6 +86,11 @@ public class UIMenuScrollView: UIView, UIScrollViewDelegate {
     }
     
     override public func layoutSubviews() {
+        self.startInit()
+    }
+    
+    /// Start init view, constraints and buttons
+    internal func startInit() {
         self.initViews()
         self.setupConstraints()
         self.addButtonsToStackView()
@@ -93,6 +103,9 @@ public class UIMenuScrollView: UIView, UIScrollViewDelegate {
         self.addSubview(self.indicatorView)
         
         guard let delegate = self.delegate else { return }
+        
+        // Set count to buttons
+        self.buttonsCount = delegate.menuScroll(menuScroll: self)
         
         // Set image to indicator view
         self.indicatorView.image = delegate.menuScroll(menuScroll: self)
@@ -125,12 +138,12 @@ public class UIMenuScrollView: UIView, UIScrollViewDelegate {
     }
     
     /// Add buttons to stackView
-    private func addButtonsToStackView() {
-        guard let delegate = self.delegate, self.buttonList.count == 0 else { return }
+    internal func addButtonsToStackView() {
+        guard let delegate = self.delegate, self.buttonsList.count == 0 else { return }
         
-        for index in 0..<delegate.menuScroll(menuScroll: self) {
+        for index in 0..<self.buttonsCount {
             let button = self.createButton()
-            self.buttonList.append(button)
+            self.buttonsList.append(button)
             self.stackView.addArrangedSubview(button)
             // Aff first button to focused
             if self.focusButton == nil {
@@ -142,7 +155,7 @@ public class UIMenuScrollView: UIView, UIScrollViewDelegate {
     }
     
     /// Creating and setting button
-    private func createButton() -> UIButton {
+    internal func createButton() -> UIButton {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(eventClick), for: .touchUpInside)
@@ -158,11 +171,11 @@ public class UIMenuScrollView: UIView, UIScrollViewDelegate {
     }
     
     /// Event click to button in stackView
-    @objc func eventClick(sender: UIButton) {
+    @objc internal func eventClick(sender: UIButton) {
         guard let delegate = self.delegate else { return }
         
         if let focus = self.focusButton, sender == focus {
-            let index = self.buttonList.firstIndex(of: focus) ?? 0
+            let index = self.buttonsList.firstIndex(of: focus) ?? 0
             delegate.menuScroll(menuScroll: self, touchSender: focus, index: index)
             
             // Animated indicator
@@ -179,10 +192,10 @@ public class UIMenuScrollView: UIView, UIScrollViewDelegate {
     }
     
     /// Selected near button by stack view center
-    private func nearButton(scrollView: UIScrollView) -> UIButton? {
+    internal func nearButton(scrollView: UIScrollView) -> UIButton? {
         let position = scrollView.contentOffset.x
         
-        let near = self.buttonList.filter { button -> Bool in
+        let near = self.buttonsList.filter { button -> Bool in
             let buttonMinX = button.center.x - frame.height - self.spacing
             let buttonMaxX = button.center.x + self.spacing
             return position > buttonMinX && position < buttonMaxX
@@ -196,7 +209,7 @@ public class UIMenuScrollView: UIView, UIScrollViewDelegate {
     }
     
     /// Scroll to near button
-    private func scrollTo(button: UIButton) {
+    internal func scrollTo(button: UIButton) {
         let center = button.center.x - frame.height / 2
         self.scrollView.setContentOffset(CGPoint(x: center, y: 0), animated: true)
         self.focusButton = button

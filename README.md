@@ -16,11 +16,11 @@ To integrate `UIMenuScroll` into your Xcode project using CocoaPods, specify it 
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
+platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-pod 'UIMenuScroll', '~> 0.0.5'
+pod 'UIMenuScroll', '~> 0.1.0'
 end
 ```
 
@@ -70,7 +70,7 @@ extension ViewController: UIMenuScrollViewDelegate {
     { ... }
 
     /// Set options to center indicator image
-    func menuScroll(menuScroll: UIMenuScrollView) -> UIImage
+    func menuScroll(menuScroll: UIMenuScrollView) -> UIImage?
     { ... }
 
 }
