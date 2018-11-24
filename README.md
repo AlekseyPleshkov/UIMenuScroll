@@ -2,7 +2,7 @@
 
 `UIMenuScroll` creating menu how on Facebook Messenger on take photo
 
-![Screenshot](https://github.com/AlekseyPleshkov/UIMenuScroll/blob/master/Screenshot.jpg?raw=true)
+![Screenshot](https://github.com/AlekseyPleshkov/UIMenuScroll/blob/master/example.gif?raw=true)
 
 ## Installation
 

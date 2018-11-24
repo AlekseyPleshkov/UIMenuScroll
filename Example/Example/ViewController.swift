@@ -12,6 +12,11 @@ import UIMenuScroll
 class ViewController: UIViewController {
     
     @IBOutlet weak var menuScroll: UIMenuScrollView!
+    @IBOutlet weak var labelEventName: UILabel!
+    
+    private let menuScrollImages: [String] = [
+        "menu-clean", "menu-eat", "menu-hand", "menu-play", "menu-sleep"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,28 +25,28 @@ class ViewController: UIViewController {
         self.menuScroll.spacing = 10.0
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func clickToMenu (index: Int) {
+        let imageNamge = self.menuScrollImages[index]
+        self.labelEventName.text = "\(imageNamge)"
     }
-    
 }
 
 extension ViewController: UIMenuScrollViewDelegate {
+    
     func menuScroll(menuScroll: UIMenuScrollView) -> Int {
-        return 10
+        return self.menuScrollImages.count
     }
     
     func menuScroll(menuScroll: UIMenuScrollView, createdButton: UIButton, index: Int) {
-        let buttonImage = UIImage(named: "menuScrollTest")
+        let buttonImage = UIImage(named: self.menuScrollImages[index])
         createdButton.setImage(buttonImage, for: .normal)
     }
     
     func menuScroll(menuScroll: UIMenuScrollView, touchSender: UIButton, index: Int) {
-        print("Touch")
+        self.clickToMenu(index: index)
     }
     
-    func menuScroll(menuScroll: UIMenuScrollView) -> UIImage {
-        return UIImage(named: "menuScrollIndicator")!
+    func menuScroll(menuScroll: UIMenuScrollView) -> UIImage? {
+        return UIImage(named: "menuScrollIndicator")
     }
 }
